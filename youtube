@@ -1,0 +1,34 @@
+1.更新系统
+RedHat 系列：
+yum -y update
+Debian 系列：
+apt-get update
+apt-get upgrade
+2.关闭防火墙
+systemctl disable firewalld
+chkconfig iptables off
+3.新建文件夹
+mkdir -m 755 /etc/speedtest
+5.进入文件夹
+cd /etc/speedtest
+6.下载压缩包
+Linux32位系统下载：
+wget  --no-check-certificate https://github.com/xiongzai666/stairspeedtest-reborn/releases/download/v11.45.14/stairspeedtest_reborn_linux32.zip
+Linux64位系统下载：
+wget  --no-check-certificate https://github.com/xiongzai666/stairspeedtest-reborn/releases/download/v11.45.14/stairspeedtest_reborn_linux64.zip
+7.安装unzip
+Debian系列：
+apt-get install zip
+Redhat系列：
+yum install -y unzip zip
+8.解压压缩包(根据下载的版本选择)
+unzip stairspeedtest_reborn_linux32(64).zip
+9.执行程序
+chmod -R 755 /etc/speedtest/*
+chmod +x webgui.sh
+bash webgui.sh
+之后输入IP:65430就可以使用了
+10.绑定域名
+将webgui.sh中的--port=65430改为80
+然后进入你域名的DNS解析到你机机的IP
+访问域名即可使用
